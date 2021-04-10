@@ -13,14 +13,14 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static('public'));
 
 /* RUTAS */
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.render('home', {
         nombre: 'David',
         titulo: 'Curso de Node '
     });
-});
+}); */
 
-app.get('/elements', (req, res) => {
+/* app.get('/elements', (req, res) => {
     res.render('elements', {
         nombre: 'David',
         titulo: 'Curso de Node '
@@ -32,11 +32,11 @@ app.get('/generic', (req, res) => {
         nombre: 'David',
         titulo: 'Curso de Node '
     });
-});
-
-/* app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/public/404.html');
 }); */
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
 
 /* ENCENDER EL SERVIDOR */
 app.listen(port, (req, res) => {
